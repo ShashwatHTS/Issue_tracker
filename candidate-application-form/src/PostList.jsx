@@ -3,7 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import BasicModal from "./BasicModal";
-import { FormControl, InputLabel, MenuItem, Select, Box } from "@mui/material";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  Box,
+  Link,
+} from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 
 const PostList = () => {
@@ -183,27 +191,67 @@ const PostList = () => {
               className="w-[250px]  grow shrink-0 basis-[450px]  border-2 p-4 border-solid rounded-md"
             >
               <div className="w-full">
-                <div className="flex m-2">
-                  <img
-                    src={post.logoUrl}
-                    alt="company logo"
-                    width={"40px"}
-                    height={"30px"}
-                  />
-                  <div className="pl-2">
-                    <Text>{post.companyName}</Text>
-                    <br />
-                    <Text>{post.jobRole}</Text>
-                    <br />
-                    <Text>{post.location}</Text>
+                <div className="flex">
+                  <div className="m-2">
+                    <img
+                      src={post.logoUrl}
+                      alt="company logo"
+                      width={"40px"}
+                      height={"30px"}
+                    />
+                  </div>
+                  <div>
+                    <div className="flex flex-col pl-2">
+                      <div className="flex ">
+                        <Link
+                          href={post.jLink}
+                          style={{
+                            textDecoration: "none",
+                          }}
+                        >
+                          {" "}
+                          <Text
+                            style={{
+                              fontSize: "13px",
+                              fontWeight: "600",
+                              letterSpacing: "1px",
+                              marginBottom: "3px",
+                              color: "#8b8b8b",
+                              cursor: "pointer",
+                            }}
+                          >
+                            {post.companyName}
+                          </Text>
+                        </Link>
+                      </div>
+                      <Text
+                        style={{
+                          fontSize: "14px",
+                          lineHeight: "1.5",
+                          textTransform: "Capitalize",
+                        }}
+                      >
+                        {post.jobRole}
+                      </Text>
+
+                      <div className=" capitalize text-[12px] mt-2 text-gray-900 font-bold space[.2rem]">
+                        <Text>{post.location}</Text>
+                      </div>
+                      <br />
+                    </div>
                   </div>
                 </div>
-                <br />
+
                 <div>
-                  <Text>
-                    Estimated Salary:{" "}
+                  <Text
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: "400",
+                    }}
+                  >
+                    Estimated Salary : <CurrencyRupeeIcon sx={{ fontSize: 18 }} />
                     {post.minJdSalary === null ? 0 : post.minJdSalary} -{" "}
-                    {post.maxJdSalary}✅
+                    {post.maxJdSalary} LPA ✅
                   </Text>
                 </div>
                 <br />
@@ -230,13 +278,24 @@ const PostList = () => {
                 </div>
 
                 <br />
-                <Text>
+                <Text
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: "700",
+                    letterSpacing: "1px",
+                    marginBottom: "3px",
+                    color: "#8b8b8b",
+                    // cursor: "pointer",
+                  }}
+                >
                   Minimum Experience: <br />
-                  {post.minExp === null ? 0 : post.minExp} - {post.maxExp} years
+                  <div className="text-black-900">
+                    {post.minExp === null ? 0 : post.minExp}-{post.maxExp} years
+                  </div>
                 </Text>
                 <br />
                 <Button
-                  className="w-full bg-blue-200 rounded-md p-2 mt-2"
+                  className="w-full bg-green-300 text-black font-medium py-2 px-4 rounded-md"
                   onClick={() => console.log("clicked")}
                 >
                   Easy Apply
