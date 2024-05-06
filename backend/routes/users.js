@@ -18,7 +18,10 @@ router.post('/create-issue',async(req,res,next)=>{
     },
   });
 console.log("newIssue",newIssue)
-  res.send(newIssue)
+  res.json({
+    status:201,
+    data: newIssue
+  })
 })
 
 module.exports = router;
