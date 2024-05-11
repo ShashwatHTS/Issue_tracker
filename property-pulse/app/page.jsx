@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Hero from '@/components/Hero'
+import InfoBoxes from '@/components/InfoBoxes'
 import React from 'react'
 
 // export const metadata = {
@@ -8,8 +9,8 @@ import React from 'react'
 const HomePage = () => {
   return (
     <>
-      <h1 className='text-3xl'>Home</h1>
-      <Link href={'/properties'}>Show Properties</Link>
+      <Hero />
+      <InfoBoxes />
     </>
   )
 }
