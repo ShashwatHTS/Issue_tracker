@@ -7,6 +7,7 @@ import Link from 'next/link'
 import PropertyDetails from '@/components/PropertyDetails'
 import { FaArrowLeft, FaBookmark } from 'react-icons/fa'
 import Spinner from '@/components/Spinner'
+import PropertyImages from '@/components/PropertyImages'
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -41,7 +42,7 @@ const PropertyPage = () => {
 
   return (
     <>
-      {loading && <Spinner loading={loading}/>}
+      {loading && <Spinner loading={loading} />}
       {!loading && property && (
         <>
           <PropertyHeaderImage image={property.images[0]} />
@@ -148,6 +149,7 @@ const PropertyPage = () => {
               </div>
             </div>
           </section>
+          <PropertyImages images={property.images} />
         </>
       )
       }

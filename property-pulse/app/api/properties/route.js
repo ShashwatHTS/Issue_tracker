@@ -1,6 +1,7 @@
 import connectDB from "@/config/database"
 import Property from "@/app/models/Property"
 import { getSessionUser } from "@/utils/getSessionUser"
+import cloudinary from "@/config/cloudinary"
 
 // Get /api/properties
 export const GET = async (request) => {
@@ -59,6 +60,29 @@ export const POST = async (request) => {
       },
       owner: userId,
       // images,
+    }
+    // upload images to cloudinary
+    const imageUploadPromise = [];
+
+    for (const image of images) {
+      const imageBuffer = await image.arrayBuffer();
+      const imageArray = Array.from(new Uint8Array(imageBuffer));
+      const imageData = Buffer.from(imageArray);
+
+      // convert the image data to base64
+      const imageBase64 = imageData.toString('base64')
+
+      // make to request to upload cloudinary
+      const result = await cloudinary.uploader.upload(
+        `data:image/png;base64,${imageBase64}`, {
+        folder: 'propertypulse'
+      }
+      )
+      imageUploadPromise.push(result.secure_url)
+      // wait for all images to upload
+      const uploadImages = await Promise.all(imageUploadPromise)
+      // Add uploaded images to the propertyData object
+      propertyData.images = uploadImages
     }
 
     const newProperty = new Property(propertyData);

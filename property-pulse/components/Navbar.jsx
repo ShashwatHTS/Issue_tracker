@@ -192,7 +192,9 @@ const Navbar = () => {
                         role="menuitem"
                         tabIndex="-1"
                         id="user-menu-item-0"
-                        onClick={()=>setIsMobileMenuOpen(false)}
+                        onClick={() => 
+                          setIsProfileMenuOpen(false)
+                        }
                       >Your Profile</Link
                       >
                       <Link
@@ -201,13 +203,13 @@ const Navbar = () => {
                         role="menuitem"
                         tabIndex="-1"
                         id="user-menu-item-2"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={() => setIsProfileMenuOpen(false)}
                       >Saved Properties</Link
                       >
                       <button
                         onClick={() => {
                           route.push('/')
-                          setIsMobileMenuOpen(false)
+                          setIsProfileMenuOpen(false)
                           signOut()
                         }}
                         className="block px-4 py-2 text-sm text-gray-700"

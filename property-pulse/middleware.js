@@ -4,6 +4,7 @@ export const config = {
   matcher: [
     '/properties/add',
     '/profile',
-    '/properties/saved'
+    '/properties/saved',
+    '/properties/user:id'
   ]
 }
