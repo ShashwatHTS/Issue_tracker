@@ -932,13 +932,13 @@ splice:- A splice is a part of an array. It is created when an array is spliced.
 splice vs slice:- splice is used to remove elements from an array. slice is used to create a copy of an array.
 
 why js is called single threaded :- JavaScript is called single threaded because it is executed one line at a time. it has one call stack and one memory stack.
-
-\*/
+~~~
 
 
 Explanation of closure
 
 javascript question 
+~~~javascript
 
 const get_palindrom = (str) => {
 return str === str.split('').reverse().join('');
