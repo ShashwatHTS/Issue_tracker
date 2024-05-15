@@ -1081,3 +1081,40 @@ const find_duplicate_num = (arr) => {
 
 console.log(find_duplicate_num([1, 2, 3, 4, 5, 6, 7, 5]));
 
+const find_more_than_one_duplicate_in_array = (arr) => {
+  let observed = {};
+  let dupesArray = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(observed[arr[i]]) {
+      if(observed[arr[i]] === 1) {
+        dupesArray.push(arr[i]);
+      }
+      observed[arr[i]] = observed[arr[i]] + 1;
+    } else {
+      observed[arr[i]] = 1;
+    }
+  }
+  
+  return dupesArray;
+}
+
+console.log(find_more_than_one_duplicate_in_array([1, 2, 3, 4, 5, 6, 7, 2, 5]))
+
+
+const findSumPairs = (arr, value) => {
+  let sumsLookup = {};
+  let output = [];
+  
+  for(let i = 0; i < arr.length; i++) {
+    let targetVal = value - arr[i];
+    
+    if(sumsLookup[targetVal]) {
+      output.push([arr[i], targetVal]);
+    }  
+    
+    sumsLookup[arr[i]] = true;
+  }
+  
+  return output;
+}
+console.log(findSumPairs([1,5,6,1,0,1], 6));
