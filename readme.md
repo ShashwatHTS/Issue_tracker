@@ -938,7 +938,8 @@ why js is called single threaded :- JavaScript is called single threaded because
 
 Explanation of closure
 
-```javascript
+javascript question 
+
 const get_palindrom = (str) => {
 return str === str.split('').reverse().join('');
 }
@@ -1062,9 +1063,7 @@ return sum - arr.length \* (arr.length + 1) / 2;
 }
 
 console.log(find_missing_num([1, 2, 4, 5, 6]))
-```
 
-```javascript
 const find_duplicate_num = (arr) => {
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
