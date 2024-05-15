@@ -1,4 +1,4 @@
-````javaScript
+~~~javaScript
 console.log("hi")
 
 var foo = "bar"
@@ -861,7 +861,7 @@ function sayHi() {
 console.log(typeof sayHi()); 
 number
 
-/\*
+
 
 this :- keyword which is used in a function, refer to the object it belong to it makes function reusable by letting you decide the object value.
 this value is determined entirely by how the function is called.
@@ -904,8 +904,11 @@ window object:- The window object is the object that is available to all scripts
 json & its common operation:- JSON is a lightweight format for storing and transporting data. It is often used in web applications. JSON is often used in web APIs.
 common operations on json:- parse, stringify and toJSON methods. example: JSON.parse(data); JSON.stringify(data); data.toJSON();
 
-IIFE:- Immediately Invoked Function Expression. It is a function that runs as soon as it is defined. It is used to create a private scope. syntax: (function(){})();
+IIFE:- Immediately Invoked Function Expression. It is a function that runs as soon as it is defined. It is used to create a private scope. 
+syntax: (function(){})();
+~~~
 
+~~~javaScript
 first class function:- A function that can be passed as an argument or returned as a value.
 first order function:- A function that doesn't accept or return any value.
 higher order function:- A function that takes another function as an argument or returns a function.
@@ -925,7 +928,8 @@ event capturing:- An event capturing is a way of propagating an event from an el
 stop propagation:- A stop propagation is a way of stopping the propagation of an event.
 
 event delegation:- An event delegation is a way of delegating an event from an element to its child. example with explanation: button.addEventListener('click', function(e){});
-
+~~~
+~~~javascript
 slice:- A slice is a part of an array. It is created when an array is sliced. example: array.slice(0, 2);
 splice:- A splice is a part of an array. It is created when an array is spliced. example: array.splice(0, 2);
 
@@ -937,7 +941,7 @@ why js is called single threaded :- JavaScript is called single threaded because
 
 Explanation of closure
 
-javascript question 
+## javascript question 
 ~~~javascript
 
 const get_palindrom = (str) => {
@@ -1076,5 +1080,4 @@ const find_duplicate_num = (arr) => {
 };
 
 console.log(find_duplicate_num([1, 2, 3, 4, 5, 6, 7, 5]));
-```
-````
+
