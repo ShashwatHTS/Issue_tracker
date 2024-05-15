@@ -1037,7 +1037,16 @@ return max - min;
 console.log(get_largest_difference([1, 4, 2, 3, 4, 5, 6, 7, 9, 8, 9, 9, 9, 9]))
 
 const get_flat = (arr) => {
-return arr.flat(2);
+  // return arr.flat(2);
+  let flatArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flatArr = flatArr.concat(arr[i]);
+    } else {
+      flatArr.push(arr[i]);
+    }
+  }
+  return flatArr;
 }
 
 console.log(get_flat([[1, 2, [4, 5], 3], [4, 5, 6], [7, 8, 9]]))
