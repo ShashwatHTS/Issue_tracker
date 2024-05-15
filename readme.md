@@ -2,88 +2,88 @@
 console.log("hi")
 
 var foo = "bar"
-~~~javaScript
+
 console.log(foo)
 
 var thisVar = 'first value'
 var thatVar = 'second value'
-~~~javaScript
+
 console.log("thisVar: ",thisVar,"\nthatVar: ",thatVar)
 
 var greet = "Hello", who = "World"
-~~~javaScript
+
 console.log("%s, %s!", greet, who)
 
-~~~javaScript
-console.log(document.body) ~~~javaScript
+
+console.log(document.body) 
 get the body no document here
 
-~~~javaScript
+
 Using the DOM API
 
-~~~javaScript
+
 document.getElementById("hello").innerHTML = "Hello, World!"
-~~~javaScript
+
 document.getElementById("hello").textContent = "Hello, World!"
 
-~~~javaScript
+
 var element = document.createElement("p")
-~~~javaScript
+
 element.textContent = "Hello, World!"
-~~~javaScript
+
 document.body.appendChild(element)
 
-~~~javaScript
+
 Using window.alert()
 
-~~~javaScript
+
 window.alert(message)
 
-~~~javaScript
+
 alert(message)
 
-~~~javaScript
+
 alert("Hello, World!")
 
-~~~javaScript
+
 Using window.prompt()
 
-~~~javaScript
+
 prompt(text,[default])
 
-~~~javaScript
+
 text:the text displayed in the prompt box.
-~~~javaScript
+
 default:the default value of the input field(optional)
 
-~~~javaScript
+
 Using window.confirm()
 
-~~~javaScript
+
 result = window.confirm(message)
 
-~~~javaScript
+
 if (window.confirm("Are you sure?")) {
 
-~~~javaScript
- ~~~javaScript
+
+ 
 do something
 
-~~~javaScript
+
  deleteItem(itemId);
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 JS Variable
 
-~~~javaScript
+
 1. Using a Variable
 
 var num = 1
 num = 2
-~~~javaScript
+
 console.log(num)
 
 num = num + 5
@@ -91,44 +91,44 @@ num = num - 6
 var num2 = num \* 10
 var num3 = num2 / num
 
-~~~javaScript
+
 console.log(num, num2, num3)
 
-~~~javaScript
+
 Type of Variable
 
-var myInt = 12 ~~~javaScript
+var myInt = 12 
 32-bit number(from -2,147,483,648 to 2,147,483,647)
-var myFloat = 12.5 ~~~javaScript
+var myFloat = 12.5 
 32-bit floating point number (decimal)
-var myDouble = 12.5 ~~~javaScript
+var myDouble = 12.5 
 64-bit floating point number (decimal)
-var myString = "Hello World" ~~~javaScript
+var myString = "Hello World" 
 String
-var myBoolean = true ~~~javaScript
+var myBoolean = true 
 Boolean
-var myLong = 123456789 ~~~javaScript
+var myLong = 123456789 
 64-bit number(from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)
 
-var NaN_Ex = 0 / 0 ~~~javaScript
+var NaN_Ex = 0 / 0 
 NaN: Division by zero is not possible.
 
-var myNotANumber = NaN ~~~javaScript
+var myNotANumber = NaN 
 NaN
 
-var notDefined; ~~~javaScript
+var notDefined; 
 Undefined: we have not assigned any value to this variable
 
-var myNull = null; ~~~javaScript
+var myNull = null; 
 null: empty value
 
-~~~javaScript
+
 Arrays and Objects
 
-var myArr = [] ~~~javaScript
+var myArr = [] 
 empty array
 
-var myObj = {} ~~~javaScript
+var myObj = {} 
 empty object
 
 var favoriteFruits = ["apple", "banana", "grape"]
@@ -138,109 +138,109 @@ var primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 
 var randomVariables = [2, "hello", true, null, undefined, NaN, myArr, myObj, 2.3]
 
 myObject = {}
-~~~javaScript
+
 john = { firstname: "John", lastname: "Doe" }
-~~~javaScript
+
 billy = { firstname: "Billy", lastname: "Doe" }
-~~~javaScript
+
 console.log(john.firstname)
 
-~~~javaScript
+
 Built-in constructors
 
-~~~javaScript
+
 1.null
 
-null == undefined ~~~javaScript
+null == undefined 
 true
-null === undefined ~~~javaScript
+null === undefined 
 false
 
-~~~javaScript
+
 careful: the type of null is object
 
-typeof null ~~~javaScript
+typeof null 
 object
 
 var a = null
-a === null ~~~javaScript
+a === null 
 true
 
-~~~javaScript
+
 2. Testing for NaN using isNaN()
 
-isNaN(NaN) ~~~javaScript
+isNaN(NaN) 
 true
-isNaN(123) ~~~javaScript
+isNaN(123) 
 false: 123 is a number
-isNaN(-2e-4) ~~~javaScript
+isNaN(-2e-4) 
 false: -2e-4 is a number (-0.0002) in scientific notation
-isNaN(Infinity) ~~~javaScript
+isNaN(Infinity) 
 false: Infinity is a number
-isNaN(true) ~~~javaScript
+isNaN(true) 
 false: true is a number converted to 1, which is a number
-isNaN(false) ~~~javaScript
+isNaN(false) 
 false: false is a number converted to 0, which is a number
-isNaN("") ~~~javaScript
+isNaN("") 
 false: "" is a string, converted to 0, which is a number
-isNaN(" ") ~~~javaScript
+isNaN(" ") 
 false: "" is a string, converted to 0, which is a number
-isNaN("25.3") ~~~javaScript
+isNaN("25.3") 
 false: "25.3" is a string, converted to 25.3, which is a number
-isNaN("Infinity") ~~~javaScript
+isNaN("Infinity") 
 false: "Infinity" is a string, converted to Infinity, which is a number
-isNaN(new Date) ~~~javaScript
+isNaN(new Date) 
 false: Date object, converted to milliseconds since epoch
-isNaN("10$") ~~~javaScript
+isNaN("10$") 
 true : conversion fails, the dollar sign is not a number
-isNaN("hello") ~~~javaScript
+isNaN("hello") 
 true : conversion fails, the string "hello" is not a number
-isNaN(undefined) ~~~javaScript
+isNaN(undefined) 
 true: converted to NaN
-isNaN() ~~~javaScript
+isNaN() 
 true: converted to NaN(implicitly undefined)
-isNaN(function () { }) ~~~javaScript
+isNaN(function () { }) 
 true: conversion fails
-isNaN({}) ~~~javaScript
+isNaN({}) 
 true: conversion fails
-isNaN([]) ~~~javaScript
+isNaN([]) 
 true: conversion fails
-isNaN([1, 2, 3]) ~~~javaScript
+isNaN([1, 2, 3]) 
 true: conversion fails
 
-console.log(typeof (undefined === 'undefined')) ~~~javaScript
+console.log(typeof (undefined === 'undefined')) 
 'boolean'
-console.log(typeof (null === 'object')) ~~~javaScript
+console.log(typeof (null === 'object')) 
 'boolean'
 
-console.log("b" _ 3) ~~~javaScript
+console.log("b" _ 3) 
 NaN
-console.log("cde" - "e") ~~~javaScript
+console.log("cde" - "e") 
 NaN
-console.log([1, 2, 3] _ 2) ~~~javaScript
+console.log([1, 2, 3] _ 2) 
 NaN
-console.log([2] \* [3]) ~~~javaScript
+console.log([2] \* [3]) 
 6
-console.log("a" + "b") ~~~javaScript
+console.log("a" + "b") 
 ab
-console.log(0 / 0) ~~~javaScript
+console.log(0 / 0) 
 NaN
 
-console.log(Math.floor("a")) ~~~javaScript
+console.log(Math.floor("a")) 
 NaN
 
-console.log(Math.sqrt(-1)); ~~~javaScript
+console.log(Math.sqrt(-1)); 
 NaN
 
 console.timeStamp()
 
-~~~javaScript
+
 till page 26
 
-~~~javaScript
+
 console.table(['hello','world'])
 
-~~~javaScript
+
 console.table({foo:'bar', baz:'qux'})
 
 var personArr = [
@@ -270,9 +270,9 @@ console.count(function () { });
 console.count(Object);
 
 var fn1 = function myfn() { };
-~~~javaScript
+
 console.count(fn1);
-~~~javaScript
+
 console.count(Number);
 
 var myObject = {
@@ -280,13 +280,13 @@ var myObject = {
 "bar": "data"
 }
 };
-~~~javaScript
+
 console.dir(myObject);
 
-~~~javaScript
+
 Debugging with assertions - console.assert()
 
-~~~javaScript
+
 Writes an error message to the console if the assertion is false. Otherwise, if the assertion is true, this does nothing
 
 console.assert('one' === 1);
@@ -439,38 +439,38 @@ return data.find((d) => d.id === id)
 
 console.log(getBook(1))
 
-~~~javaScript
+
 Destructuring
 
 const book = getBook(3);
 book;
 
-~~~javaScript
+
 const title = book.title;
-~~~javaScript
+
 const author = book.author;
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book;
 
 console.log(title, author, pages)
 
-~~~javaScript
+
 const primaryGenere = genres[0];
-~~~javaScript
+
 const secondaryGenere = genres[1];
 
 const [primaryGenere, secondaryGenere, ...otherGenres] = genres;
 
-~~~javaScript
+
 console.log(primaryGenere, secondaryGenere, otherGenres)
 
-~~~javaScript
+
 function getYear(str){
 
-~~~javaScript
+
  return str.split("-")[0];
 
-~~~javaScript
+
 }
 const getYear = (str) => str.split("-")[0];
 
@@ -480,13 +480,13 @@ console.log(true && "some string")
 console.log(false && "some string")
 console.log("johnas" && "some string");
 
-~~~javaScript
+
 falsy: 0,"",undefined,null,NaN
 
 console.log(true || "some string")
 console.log(false || "some string")
 
-~~~javaScript
+
 console.log(book.reviews.librarything.reviewsCount);
 
 const x = [1, 2, 3, 4, 5].map((e) => e \* 2)
@@ -501,27 +501,27 @@ const sorted = arr.sort((a, b) => a - b);
 arr
 sorted
 
-~~~javaScript
+
 async function getTodos() {
 
-~~~javaScript
+
  const res = await fetch("https://jsonplaceholder.typicode.com/todos")
 
-~~~javaScript
+
  const data = await res.json();
 
-~~~javaScript
+
  console.log(data);
 
-~~~javaScript
+
  return data;
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 const todos = getTodos();
-~~~javaScript
+
 todos
 
 class Rectangle {
@@ -530,12 +530,12 @@ this.height = height;
 this.width = width;
 }
 
-~~~javaScript
+
 Getter
 get area() {
 return this.calcArea();
 }
-~~~javaScript
+
 Method
 calcArea() {
 return this.height \* this.width;
@@ -562,12 +562,12 @@ this.name = name;
 this.age = age;
 
 this.getProfile = function () {
-~~~javaScript
+
 Outer function context
-console.log(this.constructor.name); ~~~javaScript
+console.log(this.constructor.name); 
 User
 return () => {
-~~~javaScript
+
 Inner function context
 console.log(this.constructor.name);
 console.log("I'm " + this.name + ", " + this.age + " yrs old");
@@ -584,9 +584,9 @@ this.name = name;
 this.age = age;
 
 this.getProfile = function () {
-~~~javaScript
+
 Outer function context
-console.log(this.constructor.name); ~~~javaScript
+console.log(this.constructor.name); 
 User
 return function () {
 console.log(this.constructor.name);
@@ -617,7 +617,7 @@ console.log(car);
 
 function sayHi() {
 console.log(name);
-~~~javaScript
+
 console.log(age);
 var name = 'Lydia';
 let age = 21;
@@ -626,52 +626,52 @@ let age = 21;
 sayHi();
 console.log('hi')
 
-~~~javaScript
+
 for (var i = 0; i < 3; i++) {
 
-~~~javaScript
- setTimeout(() => console.log(i), 1); ~~~javaScript
+
+ setTimeout(() => console.log(i), 1); 
 333
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 for (let i = 0; i < 3; i++) {
 
-~~~javaScript
- setTimeout(() => console.log(i), 1); ~~~javaScript
+
+ setTimeout(() => console.log(i), 1); 
 012
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 const shape = {
 
-~~~javaScript
+
  radius: 10,
 
-~~~javaScript
+
  diameter() {
 
-~~~javaScript
+
  return this.radius \* 2;
 
-~~~javaScript
+
  },
 
-~~~javaScript
+
  perimeter: () => 2 _ Math.PI _ this.radius,
 
-~~~javaScript
+
 };
 
-~~~javaScript
-console.log(shape.diameter()); ~~~javaScript
+
+console.log(shape.diameter()); 
 20
-~~~javaScript
-console.log(shape.perimeter()); ~~~javaScript
+
+console.log(shape.perimeter()); 
 62.83185307179586
 
 let c = { greeting: 'Hey!' };
@@ -701,13 +701,13 @@ this.newColor = newColor;
 }
 
 const freddie = new Chameleon({ newColor: 'purple' });
-~~~javaScript
-console.log(freddie.colorChange('orange')); ~~~javaScript
+
+console.log(freddie.colorChange('orange')); 
 freddie.colorChange() is not a function
 
 let greeting;
 greetign = {};
-console.log(greetign); ~~~javaScript
+console.log(greetign); 
 {}
 
 function bark() {
@@ -722,143 +722,143 @@ this.lastName = lastName;
 }
 
 const member = new Person12('Lydia', 'Hallie');
-~~~javaScript
+
 Person.getFullName = function() {
 
-~~~javaScript
+
  return `${this.firstName} ${this.lastName}`;
 
-~~~javaScript
+
 };
 
-~~~javaScript
-console.log(member.getFullName()); ~~~javaScript
+
+console.log(member.getFullName()); 
 typeError
 
-~~~javaScript
+
 function Person123(firstName, lastName) {
 
-~~~javaScript
+
  this.firstName = firstName;
 
-~~~javaScript
+
  this.lastName = lastName;
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 const lydia = new Person123('Lydia', 'Hallie');
-~~~javaScript
-~~~javaScript
+
+
 const sarah = Person123('Sarah', 'Smith');
 
-~~~javaScript
+
 console.log(lydia);
-~~~javaScript
-console.log(sarah); ~~~javaScript
+
+console.log(sarah); 
 : Person123 {firstName: "Lydia", lastName: "Hallie"} and undefined
 
-~~~javaScript
+
 function checkAge(data) {
 
-~~~javaScript
+
  if (data === { age: 18 }) {
 
-~~~javaScript
+
  console.log('You are an adult!');
 
-~~~javaScript
+
  } else if (data == { age: 18 }) {
 
-~~~javaScript
+
  console.log('You are still an adult.');
 
-~~~javaScript
+
  } else {
 
-~~~javaScript
+
  console.log(`Hmm.. You don't have an age I guess`);
 
-~~~javaScript
+
  }
 
-~~~javaScript
+
 }
 
-~~~javaScript
-checkAge({ age: 18 }); ~~~javaScript
+
+checkAge({ age: 18 }); 
 false third condition
 
-~~~javaScript
+
 function getAge(...args) {
 
-~~~javaScript
- console.log(typeof args); ~~~javaScript
+
+ console.log(typeof args); 
 object
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 getAge(21);
 
-~~~javaScript
+
 const bca = {};
-~~~javaScript
+
 const bda = { key: 'bda' };
-~~~javaScript
+
 const cab = { key: 'cab' };
 
-~~~javaScript
+
 bca[bda] = 123;
-~~~javaScript
+
 bca[cab] = 456;
 
-~~~javaScript
-console.log(a[b]); ~~~javaScript
+
+console.log(a[b]); 
 456
 
 const foo123 = () => console.log('First');
 const bar = () => setTimeout(() => console.log('Second'));
 const baz = () => console.log('Third');
 
-~~~javaScript
+
 bar();
-~~~javaScript
+
 foo123();
-~~~javaScript
+
 baz();
 
-~~~javaScript
+
 const person = { name: 'Lydia' };
 
-~~~javaScript
+
 function sayHi(age) {
 
-~~~javaScript
+
  return `${this.name} is ${age}`;
 
-~~~javaScript
+
 }
 
-~~~javaScript
+
 console.log(sayHi.call(person, 21));
-~~~javaScript
-console.log(sayHi.bind(person, 21)); ~~~javaScript
+
+console.log(sayHi.bind(person, 21)); 
 Lydia is 21 function
 
-~~~javaScript
+
 function sayHi() {
 
-~~~javaScript
+
  return (() => 0)();
 
-~~~javaScript
+
 }
 
-~~~javaScript
-console.log(typeof sayHi()); ~~~javaScript
+
+console.log(typeof sayHi()); 
 number
 
 /\*
@@ -935,7 +935,7 @@ why js is called single threaded :- JavaScript is called single threaded because
 
 \*/
 
-~~~javaScript
+
 Explanation of closure
 
 ```javascript
@@ -1014,7 +1014,7 @@ return arr.filter((item, index) => arr.indexOf(item) === index);
 console.log(getRemoveDuplicates([1, 4, 2, 3, 4, 5, 6, 7, 9, 8, 9, 9, 9, 9]))
 
 const get_largest_difference = (arr) => {
-~~~javaScript
+
 return Math.max(...arr) - Math.min(...arr);
 let max = arr[0];
 let min = arr[0];
@@ -1042,7 +1042,7 @@ return str1.split('').sort().join('') === str2.split('').sort().join('');
 }
 
 console.log(get_anagram("hitesh", "teshhi"))
-~~~javascript
+
 const get_sum_arr = (arr) => {
 return arr.reduce((a, b) => a + b, 0);
 }
@@ -1052,7 +1052,7 @@ console.log(get_sum_arr([1, 2, 3, 4, 5]))
 const get_merge_two_arr = (arr1, arr2) => {
 return arr1.concat(arr2);
 }
-~~~javascript
+
 const find_missing_num = (arr) => {
 let sum = 0;
 for (let i = 0; i < arr.length; i++) {
