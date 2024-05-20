@@ -6,16 +6,15 @@ import { useSession } from 'next-auth/react'
 import profileDefault from '@/assets/images/profile.png'
 import Spinner from '@/components/Spinner'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const ProfilePage = () => {
   const { data: session } = useSession()
   const profileImage = session?.user?.image
   const profileName = session?.user?.name
   const profileEmail = session?.user?.email
-
   const [properties, setProperties] = useState([])
   const [isLoading, setIsLoading] = useState(false)
-
 
   useEffect(() => {
     const fetchUserProperties = async (userId) => {
@@ -24,7 +23,7 @@ const ProfilePage = () => {
       }
       try {
         const res = await axios.get(`/api/properties/user/${userId}`)
-        console.log("res----->", res.data)
+        // console.log("res----->", res.data)
         if (res.data) {
           const data = await res.data
           setProperties(data)
@@ -40,6 +39,27 @@ const ProfilePage = () => {
       fetchUserProperties(session.user.id)
     }
   }, [session])
+
+  const handleDeleteProperty = async (propertyId) => {
+    const confirmed = window.confirm("Are you sure you want to delete this property");
+    if (!confirmed) return;
+
+    try {
+      const res = await axios.delete(`/api/properties/${propertyId}`)
+      console.log("res -->", res)
+      if (res.status === 200) {
+        const updatedPorperties = properties.filter((property) => property._id !== propertyId)
+        setProperties(updatedPorperties)
+        // alert("property deleted")
+        toast.success("Property Deleted")
+      } else {
+        alert("failed to delete");
+      }
+    } catch (error) {
+      console.log(error)
+      toast.error("Failed to delete Property")
+    }
+  }
 
   return (
     <>
@@ -81,11 +101,11 @@ const ProfilePage = () => {
                         />
                       </Link>
                       <div className="mt-2">
-                        <p className="text-lg font-semibold">{ property.name}</p>
-                        <p className="text-gray-600">{property.location.street}{' '}{property.location.city}, { property.location.state}</p>
+                        <p className="text-lg font-semibold">{property.name}</p>
+                        <p className="text-gray-600">{property.location.street}{' '}{property.location.city}, {property.location.state}</p>
                       </div>
                       <div className="mt-2">
-                        <Link href="/add-property.html"
+                        <Link href={`/properties/${property._id}/edit`}
                           className="bg-blue-500 text-white px-3 py-3 rounded-md mr-2 hover:bg-blue-600"
                         >
                           Edit
@@ -93,6 +113,7 @@ const ProfilePage = () => {
                         <button
                           className="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-600"
                           type="button"
+                          onClick={() => handleDeleteProperty(property._id)}
                         >
                           Delete
                         </button>
