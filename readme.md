@@ -18,9 +18,7 @@ console.log("%s, %s!", greet, who)
 console.log(document.body) 
 get the body no document here
 
-
 Using the DOM API
-
 
 document.getElementById("hello").innerHTML = "Hello, World!"
 
