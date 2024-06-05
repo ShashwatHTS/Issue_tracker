@@ -34,6 +34,8 @@ export const POST = async (request) => {
       user.bookmarks.push(propertyId);
       message = 'Bookmark added successfully';
       isBookmarked = true;
+
+      
     }
 
     await user.save();
